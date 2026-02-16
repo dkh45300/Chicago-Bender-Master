@@ -1,0 +1,5 @@
+{
+  "name": "시카고 밴더 마스터 (Chicago Bender Master)",
+  "description": "전기 및 배관 작업을 위한 시카고 밴더 전용 계산기입니다. S-밴딩, 모자(Ohm) 밴딩, 90도 공제 및 배관 규격 데이터를 제공합니다.",
+  "requestFramePermissions": []
+}
