@@ -119,10 +119,11 @@ const NinetyCalculator: React.FC<NinetyProps> = ({ state, setState, pipeSpecs })
                 {filteredPipes.map((pipe) => (
                   <button
                     key={pipe.size}
-                    /* Updated onClick to sync manualDeduction with selected pipe size spec */
                     onClick={() => setState((prev: any) => ({ 
                       ...prev, 
                       selectedSize: pipe.size,
+                      // 규격 변경 시 해당 규격의 저장된 공제값을 불러오되, 
+                      // 이미 입력 중인 값이 있다면 선택 시 업데이트됨
                       manualDeduction: pipe.deduction?.toString() || prev.manualDeduction
                     }))}
                     className={`relative overflow-hidden py-3 rounded-xl text-sm font-black transition-all border-2 ${
@@ -172,7 +173,7 @@ const NinetyCalculator: React.FC<NinetyProps> = ({ state, setState, pipeSpecs })
           </div>
 
           {calculation ? (
-            <div className="bg-blue-600 rounded-2xl p-6 text-white shadow-lg shadow-blue-100 relative overflow-hidden">
+            <div className="bg-blue-600 rounded-2xl p-6 text-white shadow-lg shadow-blue-100 relative overflow-hidden animate-in zoom-in duration-300">
                 <div className="relative z-10 flex flex-col items-center gap-1">
                   <span className="text-[11px] font-black text-blue-200 uppercase tracking-[0.2em]">최종 마킹 거리 (H - D)</span>
                   <div className="flex items-baseline gap-2">
